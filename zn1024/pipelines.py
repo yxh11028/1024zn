@@ -19,6 +19,6 @@ class Zn1024Pipeline(object):
         path = item['path']
         _request = urllib2.Request(url=url, headers=header)
         page = urllib2.urlopen(_request).read()
-        uuid.uuid4()
+        # uuid 自动生成文件名
         with open('img/' + path + '/' + str(uuid.uuid4()).replace('-', '') + '.' + url.split('.')[-1], 'wb') as f:
             f.write(page)
