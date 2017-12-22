@@ -11,6 +11,7 @@ class MeiziSpider(scrapy.Spider):
     # 从第一页开始爬取
     offset = 1
     start_urls = [_url + str(offset)]
+    os.mkdir('img')
 
     def parse(self, response):
         url_list = response.xpath('//h2[@class="grid-title"]/a/@href').extract()
